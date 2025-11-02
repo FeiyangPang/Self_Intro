@@ -175,36 +175,65 @@
     </section>
 
     <!-- Portfolio -->
-    <section id="portfolio" class="container">
-      <h2 class="section-title reveal">Portfolio</h2>
-      <p class="subtle reveal delay-1">Two selected projects with video demos.</p>
-      <div class="grid">
+    $1
+        <!-- Pang's Bikeshop (embedded video) -->
         <article class="card reveal delay-1">
-          <div class="thumb">PANG'S BIKESHOP</div>
+          <div class="video-aspect">
+            <iframe
+              id="yt-bikeshop"
+              title="Pang's Bikeshop — Demo"
+              src="about:blank"
+              data-ytid="a-v6B6mBPQM"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+              referrerpolicy="strict-origin-when-cross-origin"
+              allowfullscreen
+            ></iframe>
+            <div class="placeholder" aria-hidden="true">
+              <div style="display:grid; gap:8px; place-items:center">
+                <span>Can’t play inline? Watch on YouTube</span>
+                <a class="chip" href="https://youtu.be/a-v6B6mBPQM" target="_blank" rel="noopener">Open</a>
+              </div>
+            </div>
+          </div>
           <div class="content">
             <h3>Pang's Bikeshop</h3>
-            <p>Django-based e‑commerce site for bike parts. Short video walkthrough.</p>
+            <p>Django-based e‑commerce site for bike parts.</p>
             <div class="meta">
               <span class="chip">Django</span>
               <span class="chip">E‑commerce</span>
-              <a class="chip" href="https://youtu.be/a-v6B6mBPQM" target="_blank" rel="noopener" aria-label="Watch video demo of Pang's Bikeshop">Video</a>
             </div>
           </div>
         </article>
+
+        <!-- Freelancer (embedded video) -->
         <article class="card reveal delay-2">
-          <div class="thumb">FREELANCER</div>
+          <div class="video-aspect">
+            <iframe
+              id="yt-freelancer"
+              title="Freelancer — Gameplay"
+              src="about:blank"
+              data-ytid="NWMCF9s-GlM"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+              referrerpolicy="strict-origin-when-cross-origin"
+              allowfullscreen
+            ></iframe>
+            <div class="placeholder" aria-hidden="true">
+              <div style="display:grid; gap:8px; place-items:center">
+                <span>Can’t play inline? Watch on YouTube</span>
+                <a class="chip" href="https://youtu.be/NWMCF9s-GlM" target="_blank" rel="noopener">Open</a>
+              </div>
+            </div>
+          </div>
           <div class="content">
             <h3>Freelancer (2D Game)</h3>
-            <p>HTML5 Canvas shooter inspired by Freelancer. Short gameplay video.</p>
+            <p>HTML5 Canvas shooter inspired by Freelancer.</p>
             <div class="meta">
               <span class="chip">HTML5 Canvas</span>
               <span class="chip">JavaScript</span>
-              <a class="chip" href="https://youtu.be/NWMCF9s-GlM" target="_blank" rel="noopener" aria-label="Watch gameplay video of Freelancer">Video</a>
             </div>
           </div>
         </article>
-      </div>
-    </section>
+      $2
 
     <!-- Hobbies -->
     <section id="hobbies" class="container">
@@ -257,18 +286,21 @@
       }
     } catch (e) { document.querySelectorAll('.reveal').forEach(function(el){ el.classList.add('show'); }); }
 
-    // YouTube embed with origin param + placeholder fallback
+    // YouTube embeds (intro + portfolio) with origin param + placeholder fallback
     try {
-      var yt = document.getElementById('intro-yt');
-      var placeholder = document.querySelector('#video .placeholder');
-      if (yt && yt.dataset.ytid) {
-        var id = yt.dataset.ytid.trim();
+      var iframes = document.querySelectorAll('iframe[data-ytid]');
+      iframes.forEach(function(yt){
+        var id = (yt.dataset.ytid || '').trim();
+        if (!id) return;
         var base = 'https://www.youtube-nocookie.com/embed/' + id;
         var params = new URLSearchParams({ rel: '0', modestbranding: '1', playsinline: '1' });
         if (location.protocol.indexOf('http') === 0) params.set('origin', location.origin);
         yt.src = base + '?' + params.toString();
-        yt.addEventListener('load', function(){ if (placeholder) placeholder.style.display = 'none'; });
-      }
+        yt.addEventListener('load', function(){
+          var ph = yt.parentElement && yt.parentElement.querySelector('.placeholder');
+          if (ph) ph.style.display = 'none';
+        });
+      });
     } catch (e) {}
   })();
   </script>
