@@ -108,6 +108,9 @@
       .card:hover{transform:none}
       *{scroll-behavior:auto}
     }
+      /* Smaller embedded videos for portfolio */
+    .video-aspect.video-sm{max-width:560px; margin:0 auto;}
+    @media (max-width:640px){ .video-aspect.video-sm{max-width:100%;} }
   </style>
 </head>
 <body>
@@ -178,9 +181,8 @@
     $1
         <!-- Pang's Bikeshop (embedded video) -->
         <article class="card reveal delay-1">
-          <div class="video-aspect">
-            <iframe
-              id="yt-bikeshop"
+          <div class="video-aspect video-sm">
+            <iframe id="yt-bikeshop"
               title="Pang's Bikeshop — Demo"
               src="about:blank"
               data-ytid="a-v6B6mBPQM"
@@ -196,20 +198,16 @@
             </div>
           </div>
           <div class="content">
-            <h3>Pang's Bikeshop</h3>
-            <p>Django-based e‑commerce site for bike parts.</p>
-            <div class="meta">
-              <span class="chip">Django</span>
-              <span class="chip">E‑commerce</span>
+            $1
+              <a class="chip" href="https://bikeshop-u77v.onrender.com" target="_blank" rel="noopener">Visit site</a>
             </div>
           </div>
         </article>
 
         <!-- Freelancer (embedded video) -->
         <article class="card reveal delay-2">
-          <div class="video-aspect">
-            <iframe
-              id="yt-freelancer"
+          <div class="video-aspect video-sm">
+            <iframe id="yt-freelancer"
               title="Freelancer — Gameplay"
               src="about:blank"
               data-ytid="NWMCF9s-GlM"
@@ -225,11 +223,8 @@
             </div>
           </div>
           <div class="content">
-            <h3>Freelancer (2D Game)</h3>
-            <p>HTML5 Canvas shooter inspired by Freelancer.</p>
-            <div class="meta">
-              <span class="chip">HTML5 Canvas</span>
-              <span class="chip">JavaScript</span>
+            $1
+              <a class="chip" href="https://demo-9ri.pages.dev" target="_blank" rel="noopener">Play demo</a>
             </div>
           </div>
         </article>
