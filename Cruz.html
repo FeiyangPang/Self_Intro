@@ -154,22 +154,28 @@
       <div class="video-wrap">
         <article class="video-card reveal delay-1">
           <div class="video-aspect">
-            <!-- Switched to a local/hosted MP4 for maximum reliability. Place your file at /videos/intro.mp4 -->
-            <video id="intro-local" controls preload="metadata" playsinline poster="poster.jpg">
-              <source src="videos/intro.mp4" type="video/mp4" />
-              Sorry, your browser doesn't support embedded videos.
-            </video>
+            <iframe
+              id="intro-yt"
+              title="Intro Video"
+              src="about:blank"
+              data-ytid="fQyqqewv4S4"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+              referrerpolicy="strict-origin-when-cross-origin"
+              allowfullscreen
+            ></iframe>
             <div class="placeholder" aria-hidden="true">
               <div style="display:grid; gap:8px; place-items:center">
-                <span>If the player doesn’t appear, make sure <code>videos/intro.mp4</code> exists.</span>
+                <span>Can’t play inline? Watch on YouTube</span>
                 <a class="chip" href="https://youtu.be/fQyqqewv4S4" target="_blank" rel="noopener">Open on YouTube</a>
               </div>
             </div>
           </div>
             </div>
           </div>
+            </div>
+          </div>
         </article>
-        <p class="note reveal delay-2">Upload your file to <code>videos/intro.mp4</code> (create the <code>videos</code> folder next to this HTML). Optional: add a <code>poster.jpg</code> preview in the same folder. If you still want to embed YouTube later, I can re-enable the iframe after you allow embedding in YouTube Studio.</p>
+        <p class="note reveal delay-2">Using a YouTube embed (privacy‑enhanced <code>youtube-nocookie.com</code>). If embedding is disabled or blocked, the button opens the video on YouTube. To change videos later, update the <code>data-ytid</code> on the iframe.</p>
       </div>
     </section>
 
@@ -244,7 +250,17 @@
       document.querySelectorAll('.reveal').forEach(el=> el.classList.add('show'));
     }
 
-    // No YouTube embed needed when using local file. Keeping this block empty intentionally.`;
+    // YouTube embed with origin param + placeholder fallback
+    const yt = document.getElementById('intro-yt');
+    const placeholder = document.querySelector('#video .placeholder');
+    if (yt && yt.dataset.ytid) {
+      const id = yt.dataset.ytid.trim();
+      const base = `https://www.youtube-nocookie.com/embed/${id}`;
+      const params = new URLSearchParams({ rel: '0', modestbranding: '1', playsinline: '1' });
+      if (location.protocol.startsWith('http')) params.set('origin', location.origin);
+      yt.src = `${base}?${params.toString()}`;
+      yt.addEventListener('load', () => { if (placeholder) placeholder.style.display = 'none'; });
+    }`;
       const params = new URLSearchParams({ rel: '0', modestbranding: '1', playsinline: '1' });
       if (location.protocol.startsWith('http')) params.set('origin', location.origin);
       yt.src = `${base}?${params.toString()}`;
