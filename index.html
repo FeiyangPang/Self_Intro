@@ -117,6 +117,9 @@
     #portfolio .content{text-align:center}
     #portfolio .content h3{font-size:20px;margin:14px 0 6px}
     #portfolio .meta{justify-content:center}
+      /* Uniform video sizing for intro + portfolio */
+    .video-aspect.video-uniform{max-width:720px;margin:0 auto;border-radius:var(--radius);overflow:hidden;border:1px solid var(--stroke);box-shadow:var(--shadow);}
+    @media (max-width:768px){.video-aspect.video-uniform{max-width:100%;}}
   </style>
 </head>
 <body>
@@ -153,7 +156,7 @@
       <h2 class="section-title reveal">Video Introduction</h2>
       <div class="video-wrap">
         <article class="video-card reveal delay-1">
-          <div class="video-aspect">
+          <div class="video-aspect video-uniform">
             <iframe
               id="intro-yt"
               title="Intro Video"
@@ -179,8 +182,15 @@
     $1
         <!-- Pang's Bikeshop (embedded video) -->
         <article class="card reveal delay-1">
-          <div class="video-aspect video-sm">
-            <iframe id="yt-bikeshop"
+          <div class="content">
+            <h3>Pang's Bikeshop</h3>
+            <p class="subtle">Watch the demo below and visit the live site at 
+              <a href="https://bikeshop-u77v.onrender.com" target="_blank" rel="noopener">bikeshop-u77v.onrender.com</a>.
+            </p>
+          </div>
+          <div class="video-aspect video-uniform">
+            <iframe
+              id="yt-bikeshop"
               title="Pang's Bikeshop — Demo"
               src="about:blank"
               data-ytid="a-v6B6mBPQM"
@@ -195,17 +205,19 @@
               </div>
             </div>
           </div>
-          <div class="content">
-            $1
-              <a class="chip" href="https://bikeshop-u77v.onrender.com" target="_blank" rel="noopener">Visit site</a>
-            </div>
-          </div>
         </article>
 
         <!-- Freelancer (embedded video) -->
         <article class="card reveal delay-2">
-          <div class="video-aspect video-sm">
-            <iframe id="yt-freelancer"
+          <div class="content">
+            <h3>Freelancer (2D Game)</h3>
+            <p class="subtle">Watch the gameplay below and try the live demo at 
+              <a href="https://demo-9ri.pages.dev" target="_blank" rel="noopener">demo-9ri.pages.dev</a>.
+            </p>
+          </div>
+          <div class="video-aspect video-uniform">
+            <iframe
+              id="yt-freelancer"
               title="Freelancer — Gameplay"
               src="about:blank"
               data-ytid="NWMCF9s-GlM"
@@ -218,11 +230,6 @@
                 <span>Can’t play inline? Watch on YouTube</span>
                 <a class="chip" href="https://youtu.be/NWMCF9s-GlM" target="_blank" rel="noopener">Open</a>
               </div>
-            </div>
-          </div>
-          <div class="content">
-            $1
-              <a class="chip" href="https://demo-9ri.pages.dev" target="_blank" rel="noopener">Play demo</a>
             </div>
           </div>
         </article>
