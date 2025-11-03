@@ -109,8 +109,14 @@
       *{scroll-behavior:auto}
     }
       /* Smaller embedded videos for portfolio */
-    .video-aspect.video-sm{max-width:560px; margin:0 auto;}
+    .video-aspect.video-sm{max-width:520px;margin:0 auto;border-radius:var(--radius);overflow:hidden;border:1px solid var(--stroke);box-shadow:var(--shadow);} @media (max-width:640px){.video-aspect.video-sm{max-width:100%;}}
     @media (max-width:640px){ .video-aspect.video-sm{max-width:100%;} }
+      /* Portfolio polish */
+    #portfolio .grid{grid-template-columns:repeat(auto-fit,minmax(380px,1fr));gap:28px}
+    #portfolio .card{padding-bottom:8px}
+    #portfolio .content{text-align:center}
+    #portfolio .content h3{font-size:20px;margin:14px 0 6px}
+    #portfolio .meta{justify-content:center}
   </style>
 </head>
 <body>
@@ -137,16 +143,8 @@
       <div class="card reveal">
         <span class="kicker"><span class="pill">Open to opportunities</span> • Product‑minded Engineer</span>
         <h1>Feiyang Pang</h1>
-        <p>
-          Personal statement: a short, crisp paragraph (2–3 sentences) summarizing who you are,
-          what you do, and what you're aiming for. Mention 1–2 notable strengths or quantifiable wins.
-        </p>
-        <div class="tags" aria-label="Skills">
-          <span class="tag">Django</span>
-          <span class="tag">JavaScript</span>
-          <span class="tag">HTML5 Canvas</span>
-          <span class="tag">UI/UX</span>
-        </div>
+        <p>Guided by Steve Jobs’ reminder to “not be trapped by dogma,” I’ve pushed past the “just a gamer” stereotype—founding the Delta Action Gaming Club and treating games as cultural carriers that build connection. Grounded in rigorous CS training (C++, Java, Python) with milestones like USACO Gold, a 5 on AP CSP, and projects spanning a website, a game, and an accessibility app for the deaf—reinforced by a Cornell tech-ethics course—I aim to study CS/AI and create game products that unite innovation, market value, and social impact.</p>
+        
       </div>
     </section>
 
@@ -173,7 +171,7 @@
             </div>
           </div>
         </article>
-        <p class="note reveal delay-2">Using a YouTube embed (privacy‑enhanced <code>youtube-nocookie.com</code>). If embedding is disabled or blocked, the button opens the video on YouTube. To change videos later, update the <code>data-ytid</code> on the iframe.</p>
+        
       </div>
     </section>
 
@@ -253,7 +251,7 @@
 
   <footer>
     <div class="container">
-      <p>© <span id="year"></span> Feiyang Pang. Built with vanilla HTML/CSS/JS. <span class="subtle">Last updated <span id="updated"></span>.</span></p>
+      <p>© <span id="year"></span> Feiyang Pang. <span class="subtle">Last updated <span id="updated"></span>.</span></p>
     </div>
   </footer>
 
