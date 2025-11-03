@@ -4,7 +4,7 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Feiyang Pang — Resume & Portfolio</title>
-  <meta name="description" content="Feiyang Pang — one‑page resume, video intro, portfolio (Pang’s Bikeshop & Freelancer game), and hobbies with smooth scroll animations." />
+  <meta name="description" content="Feiyang Pang — one-page resume, video intro, portfolio (Pang’s Bikeshop & Freelancer game), and hobbies with smooth scroll animations." />
   <meta property="og:title" content="Feiyang Pang — Resume & Portfolio" />
   <meta property="og:description" content="Video introduction, projects, and hobbies." />
   <meta name="theme-color" content="#0b1224" />
@@ -14,40 +14,39 @@
   <script>document.documentElement.classList.add('js');</script>
   <style>
     :root{
-      --bg: #0b1224;
-      --elev: #121938;
-      --card: rgba(255,255,255,0.05);
-      --stroke: rgba(255,255,255,0.12);
-      --text: #e6edf7;
-      --muted: #b8c1d9;
-      --accent: #7aa2ff;
-      --accent-2: #22c55e;
-      --radius: 18px;
-      --shadow: 0 10px 25px rgba(0,0,0,0.35);
+      --bg:#0b1224;
+      --elev:#121938;
+      --card:rgba(255,255,255,0.05);
+      --stroke:rgba(255,255,255,0.12);
+      --text:#e6edf7;
+      --muted:#b8c1d9;
+      --accent:#7aa2ff;
+      --accent-2:#22c55e;
+      --radius:18px;
+      --shadow:0 10px 25px rgba(0,0,0,0.35);
+      --video-max:720px; /* intro & portfolio share this size */
     }
     *{box-sizing:border-box}
     html,body{height:100%}
     body{
-      margin:0; font-family:Inter, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, "Apple Color Emoji","Segoe UI Emoji";
-      background: radial-gradient(1200px 800px at 10% 0%, #10193a 0%, var(--bg) 60%),
-                  radial-gradient(1000px 800px at 90% 10%, #0e2235 0%, transparent 60%),
-                  var(--bg);
-      color:var(--text);
-      line-height:1.6;
-      -webkit-font-smoothing:antialiased;
-      scroll-behavior:smooth;
+      margin:0; font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,Helvetica,Arial,"Apple Color Emoji","Segoe UI Emoji";
+      background:
+        radial-gradient(1200px 800px at 10% 0%, #10193a 0%, var(--bg) 60%),
+        radial-gradient(1000px 800px at 90% 10%, #0e2235 0%, transparent 60%),
+        var(--bg);
+      color:var(--text); line-height:1.6; -webkit-font-smoothing:antialiased; scroll-behavior:smooth;
     }
-    .container{width:min(1100px, 92%); margin-inline:auto}
+    .container{width:min(1100px,92%); margin-inline:auto}
     a{color:var(--accent); text-decoration:none}
     a:hover{text-decoration:underline}
 
     /* Header */
-    header{ position:sticky; top:0; z-index:50; backdrop-filter: blur(8px);
-      background:linear-gradient(to bottom, rgba(11,18,36,0.9), rgba(11,18,36,0.6)); border-bottom:1px solid var(--stroke); }
+    header{position:sticky; top:0; z-index:50; backdrop-filter:blur(8px);
+      background:linear-gradient(to bottom, rgba(11,18,36,0.9), rgba(11,18,36,0.6)); border-bottom:1px solid var(--stroke);}
     .nav{display:flex; align-items:center; justify-content:space-between; padding:12px 0}
     .brand{display:flex; align-items:center; gap:10px}
-    .brand .dot{width:12px; height:12px; border-radius:50%; background:linear-gradient(135deg,var(--accent), #9ec0ff)}
-    .brand span{font-weight:800; letter-spacing:0.5px}
+    .brand .dot{width:12px; height:12px; border-radius:50%; background:linear-gradient(135deg,var(--accent),#9ec0ff)}
+    .brand span{font-weight:800; letter-spacing:.5px}
     nav ul{display:flex; gap:16px; list-style:none; margin:0; padding:0}
     nav a{color:var(--muted); font-weight:600; padding:8px 12px; border-radius:10px}
     nav a:hover{background:var(--card); color:var(--text)}
@@ -55,32 +54,31 @@
     /* Hero */
     .hero{padding:84px 0 40px; position:relative}
     .hero .card{background:var(--card); border:1px solid var(--stroke); border-radius:var(--radius); box-shadow:var(--shadow); padding:32px}
-    .kicker{display:inline-flex; align-items:center; gap:8px; color:var(--muted); font-weight:700; letter-spacing: .12em; text-transform:uppercase; font-size:12px}
+    .kicker{display:inline-flex; align-items:center; gap:8px; color:var(--muted); font-weight:700; letter-spacing:.12em; text-transform:uppercase; font-size:12px}
     .kicker .pill{display:inline-block; padding:4px 10px; border:1px solid var(--stroke); border-radius:999px; background:rgba(255,255,255,0.04)}
-    .hero h1{font-size: clamp(32px, 5vw, 56px); line-height:1.1; margin:12px 0 10px}
-    .hero p{font-size: clamp(16px, 2.2vw, 20px); color:var(--muted)}
+    .hero h1{font-size:clamp(32px,5vw,56px); line-height:1.1; margin:12px 0 10px}
+    .hero p{font-size:clamp(16px,2.2vw,20px); color:var(--muted)}
     .tags{display:flex; flex-wrap:wrap; gap:10px; margin-top:20px}
     .tag{border:1px solid var(--stroke); background:rgba(255,255,255,0.03); padding:6px 10px; border-radius:999px; font-size:13px; color:#cbd5f6}
 
     /* Sections */
     section{padding:64px 0}
-    .section-title{font-size: clamp(22px, 3.6vw, 32px); margin:0 0 24px}
+    .section-title{font-size:clamp(22px,3.6vw,32px); margin:0 0 24px}
     .subtle{color:var(--muted)}
 
     /* Video */
     .video-wrap{display:grid; grid-template-columns:1fr; gap:18px}
     .video-card{background:var(--card); border:1px solid var(--stroke); border-radius:var(--radius); overflow:hidden; box-shadow:var(--shadow)}
     .video-aspect{position:relative; width:100%; aspect-ratio:16/9; display:grid; place-items:center; background:linear-gradient(180deg, rgba(255,255,255,0.04), rgba(255,255,255,0.02))}
-    .video-aspect iframe, .video-aspect video{position:absolute; inset:0; width:100%; height:100%; border:0}
+    .video-aspect iframe,.video-aspect video{position:absolute; inset:0; width:100%; height:100%; border:0}
     .placeholder{display:grid; place-items:center; width:100%; height:100%; color:#a8b3d1; border:2px dashed var(--stroke)}
-    .placeholder span{opacity:0.8}
-    .note{font-size:14px; color:var(--muted)}
+    .placeholder span{opacity:.8}
 
-    /* Portfolio */
-    .grid{display:grid; grid-template-columns: repeat(auto-fit, minmax(260px,1fr)); gap:16px}
+    /* Cards & grids */
+    .grid{display:grid; grid-template-columns:repeat(auto-fit,minmax(260px,1fr)); gap:16px}
     .card{background:var(--card); border:1px solid var(--stroke); border-radius:var(--radius); overflow:hidden; transition:transform .22s ease, box-shadow .22s ease}
     .card:hover{transform:translateY(-4px); box-shadow:0 16px 36px rgba(0,0,0,0.4)}
-    .thumb{aspect-ratio: 16/10; background:linear-gradient(135deg,#1b2c5a 0%, #0f1c3c 50%, #10213f 100%); display:grid; place-items:center; color:#a4b4e3; font-weight:700; letter-spacing:0.08em; border-bottom:1px solid var(--stroke)}
+    .thumb{aspect-ratio:16/10; background:linear-gradient(135deg,#1b2c5a 0%, #0f1c3c 50%, #10213f 100%); display:grid; place-items:center; color:#a4b4e3; font-weight:700; letter-spacing:.08em; border-bottom:1px solid var(--stroke)}
     .content{padding:16px}
     .content h3{margin:0 0 6px; font-size:18px}
     .content p{margin:0; color:var(--muted); font-size:14px}
@@ -88,7 +86,7 @@
     .meta .chip{font-size:12px; border:1px solid var(--stroke); padding:2px 8px; border-radius:999px; color:#c7d2f1}
 
     /* Hobbies */
-    .hobbies{display:grid; grid-template-columns: repeat(auto-fit, minmax(260px,1fr)); gap:16px}
+    .hobbies{display:grid; grid-template-columns:repeat(auto-fit,minmax(260px,1fr)); gap:16px}
     .hobby{padding:18px; border:1px solid var(--stroke); border-radius:var(--radius); background:linear-gradient(180deg, rgba(255,255,255,0.03), rgba(255,255,255,0.02))}
     .hobby h4{margin:0 0 6px}
     .hobby p{margin:0; color:var(--muted)}
@@ -96,70 +94,66 @@
     /* Footer */
     footer{padding:40px 0 80px; color:var(--muted); border-top:1px solid var(--stroke)}
 
-    /* Scroll reveal — progressive enhancement */
+    /* Scroll reveal */
     .reveal{opacity:1; transform:none; filter:none}
-    .js .reveal{opacity:0; transform: translateY(16px); filter: blur(2px); transition: opacity .6s ease, transform .6s ease, filter .6s ease}
-    .js .reveal.show{opacity:1; transform: translateY(0); filter: blur(0)}
+    .js .reveal{opacity:0; transform:translateY(16px); filter:blur(2px); transition:opacity .6s ease, transform .6s ease, filter .6s ease}
+    .js .reveal.show{opacity:1; transform:translateY(0); filter:blur(0)}
     .delay-1{transition-delay:.08s} .delay-2{transition-delay:.16s} .delay-3{transition-delay:.24s} .delay-4{transition-delay:.32s}
 
-    /* Accessibility: respect reduced motion */
-    @media (prefers-reduced-motion: reduce){
+    /* Reduced motion */
+    @media (prefers-reduced-motion:reduce){
       .reveal{opacity:1; transform:none; filter:none}
       .card:hover{transform:none}
       *{scroll-behavior:auto}
     }
-      /* Smaller embedded videos for portfolio */
-    .video-aspect.video-sm{max-width:520px;margin:0 auto;border-radius:var(--radius);overflow:hidden;border:1px solid var(--stroke);box-shadow:var(--shadow);} @media (max-width:640px){.video-aspect.video-sm{max-width:100%;}}
-    @media (max-width:640px){ .video-aspect.video-sm{max-width:100%;} }
-      /* Portfolio polish */
-    #portfolio .grid{grid-template-columns:repeat(auto-fit,minmax(380px,1fr));gap:28px}
-    #portfolio .card{padding-bottom:8px}
-    #portfolio .content{ max-width:720px; margin:0 auto 8px; text-align:center; padding:0; }
-    #portfolio .content h3{ font-size:28px; line-height:1.2; margin:0 0 6px; text-align:center; }
-    #portfolio .meta{justify-content:center}
-      /* Uniform video sizing for intro + portfolio */
-    .video-aspect.video-uniform{max-width:720px;margin:0 auto;border-radius:var(--radius);overflow:hidden;border:1px solid var(--stroke);box-shadow:var(--shadow);}
-    @media (max-width:768px){.video-aspect.video-uniform{max-width:100%;}}
-      /* Center portfolio cards and unify video sizing */
-    #portfolio .grid{grid-template-columns:1fr; gap:32px; justify-items:center}
-    #portfolio .card{max-width:780px; margin:0 auto; padding-bottom:8px}
-    #portfolio .content{text-align:center}
-    #portfolio .content p{ margin:0 auto 12px; color:var(--muted); font-size:15px; max-width:720px; text-align:center; }
-    #portfolio .meta{justify-content:center}
-    .video-aspect.video-uniform{max-width:720px; margin:0 auto; border-radius:var(--radius); overflow:hidden; border:1px solid var(--stroke); box-shadow:var(--shadow)}
-    @media (max-width:768px){.video-aspect.video-uniform{max-width:100%}}
-      /* === FINAL OVERRIDES: Portfolio headings centered + underline === */
-    #portfolio .grid{justify-items:center}
-    #portfolio .card{display:grid; gap:12px; justify-items:center; max-width:780px; margin:0 auto}
-    #portfolio .content{margin:0; padding:0; text-align:center}
-    #portfolio .content h3{font-size:32px; line-height:1.15; margin:0; padding-bottom:8px; display:inline-block; border-bottom:2px solid var(--accent)}
-    #portfolio .content p{margin:6px 0 0; color:var(--muted); font-size:15px}
-    #portfolio .video-aspect.video-uniform{margin-top:10px;}
 
-    /* === Portfolio — bigger headings + more spacing === */
-#portfolio .grid{
-  gap: 52px; /* more separation between the two cards */
-}
+    /* Uniform video sizing for intro + portfolio */
+    .video-aspect.video-uniform{
+      max-width:var(--video-max);
+      margin:0 auto;
+      border-radius:var(--radius);
+      overflow:hidden;
+      border:1px solid var(--stroke);
+      box-shadow:var(--shadow);
+    }
+    @media (max-width:768px){
+      .video-aspect.video-uniform{max-width:100%}
+    }
 
-#portfolio .content{
-  text-align: center;
-  margin: 0 0 18px; /* space under the text block above the video */
-}
-
-#portfolio .content h3{
-  font-size: clamp(36px, 6.2vw, 60px); /* bigger, responsive */
-  font-weight: 800;
-  line-height: 1.1;
-  margin: 0;
-  padding-bottom: 14px; /* space + underline separation */
-  display: inline-block;
-  border-bottom: 3px solid var(--accent);
-}
-
-#portfolio .video-aspect.video-uniform{
-  margin-top: 22px; /* extra gap between heading and video */
-}
-
+    /* === Portfolio layout & bigger headings === */
+    #portfolio .grid{
+      grid-template-columns:1fr;
+      gap:56px;                 /* more separation between the two project cards */
+      justify-items:center;
+    }
+    #portfolio .card{
+      width:100%;
+      max-width:820px;
+      padding-bottom:10px;
+      display:grid;
+      gap:12px;
+      justify-items:center;
+    }
+    #portfolio .content{
+      text-align:center;
+      margin:0 0 18px;          /* space beneath text block */
+      padding:0;
+    }
+    #portfolio .content h3{
+      font-size:clamp(40px,6.5vw,64px); /* BIGGER headings */
+      font-weight:800;
+      line-height:1.1;
+      margin:0;
+      padding-bottom:14px;      /* breathing room above the underline */
+      display:inline-block;
+      border-bottom:3px solid var(--accent);
+    }
+    #portfolio .content p{
+      margin:8px 0 0; color:var(--muted); font-size:15px; max-width:720px; text-align:center;
+    }
+    #portfolio .video-aspect.video-uniform{
+      margin-top:26px;          /* extra space between heading/text and the video */
+    }
   </style>
 </head>
 <body>
@@ -184,10 +178,9 @@
     <!-- About / Personal Statement -->
     <section id="about" class="hero container">
       <div class="card reveal">
-        <span class="kicker"><span class="pill">Open to opportunities</span> • Product‑minded Engineer</span>
+        <span class="kicker"><span class="pill">Open to opportunities</span> • Product-minded Engineer</span>
         <h1>Feiyang Pang</h1>
         <p>Guided by Steve Jobs’ reminder to “not be trapped by dogma,” I’ve pushed past the “just a gamer” stereotype—founding the Delta Action Gaming Club and treating games as cultural carriers that build connection. Grounded in rigorous CS training (C++, Java, Python) with milestones like USACO Gold, a 5 on AP CSP, and projects spanning a website, a game, and an accessibility app for the deaf—reinforced by a Cornell tech-ethics course—I aim to study CS/AI and create game products that unite innovation, market value, and social impact.</p>
-        
       </div>
     </section>
 
@@ -214,77 +207,75 @@
             </div>
           </div>
         </article>
-        
       </div>
     </section>
 
-<section id="portfolio" class="container">
-  <h2 class="section-title reveal">Portfolio</h2>
+    <!-- Portfolio -->
+    <section id="portfolio" class="container">
+      <h2 class="section-title reveal">Portfolio</h2>
 
-  <div class="grid">
-    <!-- Pang's Bikeshop (embedded video) -->
-    <article class="card reveal delay-1">
-      <div class="content">
-        <h3>Pang's Bikeshop</h3>
-        <p class="subtle">
-          Watch the demo below and visit the live site at
-          <a href="https://bikeshop-u77v.onrender.com" target="_blank" rel="noopener">bikeshop-u77v.onrender.com</a>.
-        </p>
-      </div>
-      <div class="video-aspect video-uniform">
-        <iframe
-          id="yt-bikeshop"
-          title="Pang's Bikeshop — Demo"
-          src="about:blank"
-          data-ytid="a-v6B6mBPQM"
-          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-          referrerpolicy="strict-origin-when-cross-origin"
-          allowfullscreen
-        ></iframe>
-        <div class="placeholder" aria-hidden="true">
-          <div style="display:grid; gap:8px; place-items:center">
-            <span>Can’t play inline? Watch on YouTube</span>
-            <a class="chip" href="https://youtu.be/a-v6B6mBPQM" target="_blank" rel="noopener">Open</a>
+      <div class="grid">
+        <!-- Pang's Bikeshop -->
+        <article class="card reveal delay-1">
+          <div class="content">
+            <h3>Pang's Bikeshop</h3>
+            <p class="subtle">
+              Watch the demo below and visit the live site at
+              <a href="https://bikeshop-u77v.onrender.com" target="_blank" rel="noopener">bikeshop-u77v.onrender.com</a>.
+            </p>
           </div>
-        </div>
-      </div>
-    </article>
-
-    <!-- Freelancer (embedded video) -->
-    <article class="card reveal delay-2">
-      <div class="content">
-        <h3>Freelancer (2D Game)</h3>
-        <p class="subtle">
-          Watch the gameplay below and try the live demo at
-          <a href="https://demo-9ri.pages.dev" target="_blank" rel="noopener">demo-9ri.pages.dev</a>.
-        </p>
-      </div>
-      <div class="video-aspect video-uniform">
-        <iframe
-          id="yt-freelancer"
-          title="Freelancer — Gameplay"
-          src="about:blank"
-          data-ytid="NWMCF9s-GlM"
-          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-          referrerpolicy="strict-origin-when-cross-origin"
-          allowfullscreen
-        ></iframe>
-        <div class="placeholder" aria-hidden="true">
-          <div style="display:grid; gap:8px; place-items:center">
-            <span>Can’t play inline? Watch on YouTube</span>
-            <a class="chip" href="https://youtu.be/NWMCF9s-GlM" target="_blank" rel="noopener">Open</a>
+          <div class="video-aspect video-uniform">
+            <iframe
+              id="yt-bikeshop"
+              title="Pang's Bikeshop — Demo"
+              src="about:blank"
+              data-ytid="a-v6B6mBPQM"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+              referrerpolicy="strict-origin-when-cross-origin"
+              allowfullscreen
+            ></iframe>
+            <div class="placeholder" aria-hidden="true">
+              <div style="display:grid; gap:8px; place-items:center">
+                <span>Can’t play inline? Watch on YouTube</span>
+                <a class="chip" href="https://youtu.be/a-v6B6mBPQM" target="_blank" rel="noopener">Open</a>
+              </div>
+            </div>
           </div>
-        </div>
-      </div>
-    </article>
-  </div>
-</section>
+        </article>
 
+        <!-- Freelancer -->
+        <article class="card reveal delay-2">
+          <div class="content">
+            <h3>Freelancer (2D Game)</h3>
+            <p class="subtle">
+              Watch the gameplay below and try the live demo at
+              <a href="https://demo-9ri.pages.dev" target="_blank" rel="noopener">demo-9ri.pages.dev</a>.
+            </p>
+          </div>
+          <div class="video-aspect video-uniform">
+            <iframe
+              id="yt-freelancer"
+              title="Freelancer — Gameplay"
+              src="about:blank"
+              data-ytid="NWMCF9s-GlM"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+              referrerpolicy="strict-origin-when-cross-origin"
+              allowfullscreen
+            ></iframe>
+            <div class="placeholder" aria-hidden="true">
+              <div style="display:grid; gap:8px; place-items:center">
+                <span>Can’t play inline? Watch on YouTube</span>
+                <a class="chip" href="https://youtu.be/NWMCF9s-GlM" target="_blank" rel="noopener">Open</a>
+              </div>
+            </div>
+          </div>
+        </article>
+      </div>
+    </section>
 
     <!-- Hobbies -->
     <section id="hobbies" class="container">
       <h2 class="section-title reveal">Hobby Presentation</h2>
-      
       <div class="hobbies">
         <div class="hobby reveal delay-1">
           <h4>Downhill Mountain Biking</h4>
@@ -300,7 +291,7 @@
         </div>
         <div class="hobby reveal delay-4">
           <h4>Reading</h4>
-          <p>Fiction, science fiction, and non‑fiction; 20+ books/year. Blends imagination with critical thinking and applied ideas across tech and society.</p>
+          <p>Fiction, science fiction, and non-fiction; 20+ books/year. Blends imagination with critical thinking and applied ideas across tech and society.</p>
         </div>
       </div>
     </section>
