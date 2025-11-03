@@ -135,6 +135,31 @@
     #portfolio .content h3{font-size:32px; line-height:1.15; margin:0; padding-bottom:8px; display:inline-block; border-bottom:2px solid var(--accent)}
     #portfolio .content p{margin:6px 0 0; color:var(--muted); font-size:15px}
     #portfolio .video-aspect.video-uniform{margin-top:10px;}
+
+    /* === Portfolio — bigger headings + more spacing === */
+#portfolio .grid{
+  gap: 52px; /* more separation between the two cards */
+}
+
+#portfolio .content{
+  text-align: center;
+  margin: 0 0 18px; /* space under the text block above the video */
+}
+
+#portfolio .content h3{
+  font-size: clamp(36px, 6.2vw, 60px); /* bigger, responsive */
+  font-weight: 800;
+  line-height: 1.1;
+  margin: 0;
+  padding-bottom: 14px; /* space + underline separation */
+  display: inline-block;
+  border-bottom: 3px solid var(--accent);
+}
+
+#portfolio .video-aspect.video-uniform{
+  margin-top: 22px; /* extra gap between heading and video */
+}
+
   </style>
 </head>
 <body>
